@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: your-service-name  # Replace with your service name
+    env: python
+    plan: free  # or 'starter', 'standard', etc.
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --timeout 120  # Replace with your app's entry point
+    envVars:
+      - key: ENVIRONMENT
+        value: production  # Optional: Set any environment variables you need
